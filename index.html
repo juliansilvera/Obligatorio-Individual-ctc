@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CAMEC</title>
+    <link rel="stylesheet" href="./css/styles.css">
+    <link rel="icon" href="./img/logo.png" type="image/png">
+</head>
+<body>
+    <div class="container">
+        <h1>Usuarios medicamentos - CAMEC</h1>
+
+        <section class="user-form">
+            <h2>Alta de usuario</h2>
+            <form id="userForm">
+                <label for="nombre">Nombre:</label>
+                <input type="text" id="nombre" name="nombre" required pattern="[A-Za-z\s]+" title="Solo letras permitidas">
+
+                <label for="apellido">Apellido:</label>
+                <input type="text" id="apellido" name="apellido" required pattern="[A-Za-z\s]+" title="Solo letras permitidas">
+
+                <label for="cedula">C.I:</label>
+                <input type="tel" id="cedula" name="cedula" required pattern="[0-9]+" title="Solo números permitidos">
+
+                <label for="telefono">Teléfono:</label>
+                <input type="tel" id="telefono" name="telefono" required pattern="[0-9]+" title="Solo números permitidos">
+
+                <label for="imagen">Imagen:</label>
+                <input type="file" id="imagen" name="imagen" accept="image/*" required>
+
+                <div class="button-container">
+                    <button type="submit">Crear Usuario</button>
+                </div>
+
+            </form>
+        </section>
+
+        <section class="user-list">
+            <h2>Listado de usuarios</h2>
+            <input type="text" id="search" placeholder="Búsqueda por nombre">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Seleccionar</th>
+                        <th>Nombre</th>
+                        <th>Apellido</th>
+                        <th>C.I</th>
+                        <th>Teléfono</th>
+                        <th>Imagen</th>
+                    </tr>
+                </thead>
+                <tbody id="userTableBody">
+                    <!-- Los usuarios serán añadidos acá dinámicamente -->
+                </tbody>
+            </table>
+            <div class="buttons">
+                <button id="mostrarUsuario">Mostrar información de usuario</button>
+                <button id="modificarUsuario">Modificar</button>
+                <button id="eliminarUsuario">Eliminar</button>
+            </div>
+        </section>
+
+        <section class="user-info hidden">
+            <h2>Información de usuario</h2>
+            <div id="userInfo">
+                <!-- La información del usuario seleccionado será mostrada acá -->
+            </div>
+        </section>
+    </div>
+
+    <script src="/js/script.js"></script>
+</body>
+</html>
